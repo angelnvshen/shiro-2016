@@ -2,8 +2,13 @@
 authc.loginUrl=/login
 roles.unauthorizedUrl=/unauthorized.jsp
 perms.unauthorizedUrl=/unauthorized.jsp
-myRealm=own.stu.shiro.realm.MyRealm
-securityManager.realms=$myRealm
+[users]
+admin=123456,admin
+teacher=123456,teacher
+guest=123456,guest
+[roles]
+admin=user:*
+teacher=student:*
 [urls]
 /login=anon
 /admin=authc
