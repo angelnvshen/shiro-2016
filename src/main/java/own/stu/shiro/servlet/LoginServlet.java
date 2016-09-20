@@ -3,6 +3,7 @@ package own.stu.shiro.servlet;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import own.stu.shiro.util.CrypographyUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,6 +26,7 @@ public class LoginServlet extends HttpServlet {
         System.out.println("login post ..... ");
         String userName = req.getParameter("userName");
         String password = req.getParameter("password");
+        password = CrypographyUtil.encMd5(password);
 
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
