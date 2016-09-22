@@ -3,6 +3,9 @@ package own.stu.shiro.util;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.crypto.hash.Md5Hash;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by dell on 2016/9/20.
  */
@@ -36,9 +39,11 @@ public class CrypographyUtil {
     }
 
     public static void main(String[] args) {
-        String str = "123456";
-        System.out.println(CrypographyUtil.encBase64(str));
-        System.out.println(CrypographyUtil.decBase64(CrypographyUtil.encBase64(str)));
-        System.out.println(CrypographyUtil.encMd5(str));
+        List<String> list = new ArrayList<String>();
+        list.add("1");
+        list.add("3");
+        list.add("2");
+        list.add("4");
+        System.out.println(list);
     }
 }
